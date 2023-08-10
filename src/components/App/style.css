@@ -1,0 +1,64 @@
+.App {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1em;
+  background-color: #191919;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #efe0e0;
+}
+
+.container {
+  background-color: #202020;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 2em;
+  padding: 1.35em 1.8em;
+  width: 1000px;
+  height: 800px;
+  max-width: 80vw;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+}
+
+p {
+  margin:5px ;
+}
+
+.highlight {
+  color:#dea08f;
+  font-size: 14px;
+  margin-bottom: 10px ;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  
+}
+
+.isDeployed{
+  text-align: center;
+  border: 1px solid #dea08f;
+  padding:10px;
+  margin:10px;
+  max-width: 400px;
+  width:80vw;
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: 500;
+}

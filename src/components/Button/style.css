@@ -1,0 +1,45 @@
+button {
+  padding:0.5em 1em;
+  border-radius: 2em;
+  font-weight: 600;
+  font-size: 0.73em;
+  background-image: linear-gradient(90deg,#f5c2a5,#dea08f);
+  letter-spacing: 0.05em;
+  color: #202020;
+  margin:0.5em
+}
+
+button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+}
+
+.button .status {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  opacity: 0.8;
+  font-size: 0.7em;
+  padding-bottom: 0.6em;
+  padding-left: 0.2em;
+}
+
+.button .status .icon {
+  width: 1.5em;
+  height: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .status svg {
+  padding-top: 0.1em;
+  padding-left: 0.3em;
+  width: 0.9em;
+  height: 0.8em;
+}
