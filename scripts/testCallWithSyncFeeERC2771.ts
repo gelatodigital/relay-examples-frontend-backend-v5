@@ -37,7 +37,7 @@ const testCallWithSyncFeeERC2771 = async () => {
 
   // populate the relay SDK request body
   const request: CallWithSyncFeeERC2771Request = {
-    chainId,
+    chainId:5n,
     target: counter,
     data: data,
     user: user,
