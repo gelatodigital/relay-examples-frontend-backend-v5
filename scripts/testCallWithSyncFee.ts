@@ -5,6 +5,7 @@ import {
 } from "@gelatonetwork/relay-sdk";
 import { ethers } from "ethers";
 import * as dotenv from "dotenv";
+import { throwError } from "rxjs";
 
 dotenv.config({ path: ".env" });
 

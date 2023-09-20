@@ -1,6 +1,7 @@
 import {
   CallWithSyncFeeERC2771Request,
   CallWithSyncFeeRequest,
+  ERC2771Type,
   GelatoRelay,
   SponsoredCallRequest,
 } from "@gelatonetwork/relay-sdk";
@@ -47,7 +48,14 @@ const testCallWithSyncFeeERC2771 = async () => {
     isRelayContext: true,
   };
  
-  const response = await relay.callWithSyncFeeERC2771(request,signer);
+  
+
+  // sign the Payload and get struct and signature
+  const { struct, signature} = await relay.getSignatureDataERC2771(request,signer,ERC2771Type.CallWithSyncFee)
+
+  // send the request with signature
+  const response = await relay.callWithSyncFeeERC2771WithSignature(struct,{feeToken,isRelayContext:true},signature)
+
 
   console.log(`https://relay.gelato.digital/tasks/status/${response.taskId}`);
 };
