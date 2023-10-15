@@ -1340,10 +1340,10 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.43.0.tgz#559ca3d9ddbd6bf907ad524320a0d14b85586af0"
   integrity sha512-s2UHCoiXfxMvmfzqoN+vrQ84ahUSYde9qNO1MdxmoEhyHWsfmwOpFlwYV+ePJEVc7gFnATGUi376WowX1N7tFg==
 
-"@gelatonetwork/relay-sdk@5.2.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@gelatonetwork/relay-sdk/-/relay-sdk-5.2.0.tgz#954f10022aef637b4e4df3288f9e9b73738aff30"
-  integrity sha512-1rQP98LDPJdXVmfWNNNO6+rbdBKjchHx6XQDgdwye2TfRhi/s6PO0qOx2tHKaEYNilpVB5HfYKZ8nY1O22ijhQ==
+"@gelatonetwork/relay-sdk@^5.3.0":
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/@gelatonetwork/relay-sdk/-/relay-sdk-5.3.0.tgz#7545bc137ed380322ef61b3d5d28cf0b895157f4"
+  integrity sha512-cb6esCk8TwM64dhriRYLu5yL1C6XyclT0Z5uU9KJMPs8el9CPyPztMD7lVnt3BoEw8YVHrTsSYhkGAF9IBwz7w==
   dependencies:
     axios "0.27.2"
     ethers "6.7.0"

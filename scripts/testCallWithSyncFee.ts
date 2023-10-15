@@ -1,16 +1,14 @@
 import {
   CallWithSyncFeeRequest,
   GelatoRelay,
-  SponsoredCallRequest,
 } from "@gelatonetwork/relay-sdk";
 import { ethers } from "ethers";
 import * as dotenv from "dotenv";
-import { throwError } from "rxjs";
+
 
 dotenv.config({ path: ".env" });
 
 const ALCHEMY_ID = process.env.ALCHEMY_ID;
-const GELATO_RELAY_API_KEY = process.env.GELATO_RELAY_API_KEY;
 
 const RPC_URL = `https://eth-goerli.g.alchemy.com/v2/${ALCHEMY_ID}`;
 
@@ -22,8 +20,7 @@ const relay = new GelatoRelay();
 const testCallWithSyncFee = async () => {
   const counter = "0x730615186326cF8f03E34a2B49ed0f43A38c0603";
   const abi = ["function increment()"];
-  // const provider = new ethers.providers.Web3Provider(window.ethereum);
-  // const signer = provider.getSigner();
+
   const user = await signer.getAddress();
 
   const chainId = (await provider.getNetwork()).chainId;
@@ -43,9 +40,7 @@ const testCallWithSyncFee = async () => {
     feeToken: feeToken,
     isRelayContext: true,
   };
-  // Without a specific API key, the relay request will fail!
-  // Go to https://relay.gelato.network to get a testnet API key with 1Balance.
-  // Send a relay request using Gelato Relay!
+
   const response = await relay.callWithSyncFee(request);
 
   console.log(`https://relay.gelato.digital/tasks/status/${response.taskId}`);

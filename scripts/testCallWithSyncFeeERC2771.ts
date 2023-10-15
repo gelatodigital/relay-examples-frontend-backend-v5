@@ -1,8 +1,6 @@
 import {
   CallWithSyncFeeERC2771Request,
-  CallWithSyncFeeRequest,
   GelatoRelay,
-  SponsoredCallRequest,
 } from "@gelatonetwork/relay-sdk";
 import { ethers } from "ethers";
 import * as dotenv from "dotenv";
@@ -10,7 +8,6 @@ import * as dotenv from "dotenv";
 dotenv.config({ path: ".env" });
 
 const ALCHEMY_ID = process.env.ALCHEMY_ID;
-const GELATO_RELAY_API_KEY = process.env.GELATO_RELAY_API_KEY;
 
 const RPC_URL = `https://eth-goerli.g.alchemy.com/v2/${ALCHEMY_ID}`;
 
@@ -25,9 +22,8 @@ const testCallWithSyncFeeERC2771 = async () => {
   // const provider = new ethers.providers.Web3Provider(window.ethereum);
   // const signer = provider.getSigner();
   const user = await signer.getAddress();
-
+  console.log(user)
   const chainId = (await provider.getNetwork()).chainId;
-
 
 
   // Generate the target payload
