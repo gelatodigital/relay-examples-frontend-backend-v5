@@ -18,10 +18,10 @@ yarn start
 <img src="docs/ui.png" width="600" />
 
 The implementation code can be found here:
-- [sponsoredCallERC2771](src/components/App/index.tsx#L102)
-- [sponsoredCall](src/components/App/index.tsx#L136)
-- [callWithSyncFee](src/components/App/index.tsx#L164)
-- [callWithSyncFeeERC2771](src/components/App/index.tsx#L194)
+- [sponsoredCallERC2771](src/components/App/index.tsx#L102). Link to [docs](https://docs.gelato.network/developer-services/relay/erc-2771-recommended/sponsoredcallerc2771). 
+- [sponsoredCall](src/components/App/index.tsx#L136). Link to  [docs](https://docs.gelato.network/developer-services/relay/non-erc-2771/sponsoredcall). 
+- [callWithSyncFee](src/components/App/index.tsx#L164). Link to  [docs](https://docs.gelato.network/developer-services/relay/non-erc-2771/callwithsyncfee). 
+- [callWithSyncFeeERC2771](src/components/App/index.tsx#L194). Link to   [docs](https://docs.gelato.network/developer-services/relay/erc-2771-recommended/callwithsyncfeeerc2771). 
 
 
 
@@ -34,66 +34,73 @@ Please copy `.env.example` to `.env ` and add the GELATO_RELAY_API_KEY, PRIVATE_
 ```
 yarn testSponsoredCallERC2771
 ```
-code can be found [here](scripts/testSponsoredCallERC2771.ts)
+code can be found [here](scripts/testSponsoredCallERC2771.ts) and here the [docs](https://docs.gelato.network/developer-services/relay/erc-2771-recommended/sponsoredcallerc2771) 
 
 ### sponsoredCall
 ```
 yarn testSponsoredCall
 ```
-code can be found [here](scripts/testSponsoredCall.ts)
+code can be found [here](scripts/testSponsoredCall.ts) and here the [docs](https://docs.gelato.network/developer-services/relay/non-erc-2771/sponsoredcall) 
 
 
 ### callWithSyncFee
 ```
 yarn testCallWithSyncFee
 ```
-code can be found [here](scripts/testCallWithSyncFee.ts)
+code can be found [here](scripts/testCallWithSyncFee.ts) and here the [docs](https://docs.gelato.network/developer-services/relay/non-erc-2771/callwithsyncfee) 
+
 
 
 ### callWithSyncFeeERC2771
 ```
 yarn testCallWithSyncFeeERC2771
 ```
-code can be found [here](scripts/testCallWithSyncFeeERC2771.ts)
+code can be found [here](scripts/testCallWithSyncFeeERC2771.ts) and here the [docs](https://docs.gelato.network/developer-services/relay/erc-2771-recommended/callwithsyncfeeerc2771) 
 
 
 ### concurrentSponsoredCallERC2771
 ```
 yarn testConcurrentSponsoredCallERC2771
 ```
-code can be found [here](scripts/testConcurrentSponsoredCallERC2771.ts)
+code can be found [here](scripts/testConcurrentSponsoredCallERC2771.ts) and here the [docs](https://docs.gelato.network/developer-services/relay/erc-2771-recommended/sponsoredcallerc2771#parameters-for-concurrent-requests) 
+
 
 ### getSignatureDataERC2771 with sponsoredCallERC2771WithSignature
 ```
 yarn testSponsoredCallERC2771WithSignature
 ```
-code can be found [here](scripts/testSponsoredCallERC2771WithSignature.ts)
+code can be found [here](scripts/testSponsoredCallERC2771WithSignature.ts) and here the [docs](https://docs.gelato.network/developer-services/relay/erc-2771-recommended/sponsoredcallerc2771#getdatatosignerc2771) 
 
 
 ### getDataToSignERC2771 with sponsoredCallERC2771WithSignature
 ```
 yarn testSponsoredGetDataToSignERC2771
 ```
-code can be found [here](scripts/testSponsoredGetDataToSignERC2771.ts)
+code can be found [here](scripts/testSponsoredGetDataToSignERC2771.ts) and here the [docs](https://docs.gelato.network/developer-services/relay/erc-2771-recommended/sponsoredcallerc2771#getdatatosignerc2771) 
+
 
 
 ### getSignatureDataERC2771 with callWithSyncFeeERC2771WithSignature
 ```
 yarn testCallWithSyncFeeERC2771WithSignature
 ```
-code can be found [here](scripts/testCallWithSyncFeeERC2771WithSignature.ts)
+code can be found [here](scripts/testCallWithSyncFeeERC2771WithSignature.ts) and here the [docs](https://docs.gelato.network/developer-services/relay/erc-2771-recommended/callwithsyncfeeerc2771#getsignaturedataerc2771) 
 
 
 ### getDataToSignERC2771 with callWithSyncFeeERC2771WithSignature
 ```
 yarn testCallWithSyncFeeGetDataToSignERC2771
 ```
-code can be found [here](scripts/testCallWithSyncFeeGetDataToSignERC2771.ts)
+code can be found [here](scripts/testCallWithSyncFeeGetDataToSignERC2771.ts)  and here the [docs]( and here the [docs](https://docs.gelato.network/developer-services/relay/erc-2771-recommended/callwithsyncfeeerc2771#getsignaturedataerc2771) 
+) 
+
 
 
 ## Tracking your Relay Request
 
 ### WebSocket Subscription
+
+Docs can be found [here](https://docs.gelato.network/developer-services/relay/tracking-your-relay-request#websocket-subscriptions)
 
 [Relay-sdk Implementation](src/components/App/index.tsx#L121) 
 ```typescript
@@ -122,6 +129,8 @@ code can be found [here](scripts/testCallWithSyncFeeGetDataToSignERC2771.ts)
 ```
 
 ### Polling for Updates
+Docs can be found [here](https://docs.gelato.network/developer-services/relay/tracking-your-relay-request#polling-for-updates)
+
 [code](src/components/App/task.ts#L27)
 
 ```typescript
@@ -129,7 +138,7 @@ let status = await relay.getTaskStatus(taskIdToQuery);`
 ```
 
 ### Status
-
+Docs can be found [here](https://docs.gelato.network/developer-services/relay/tracking-your-relay-request#task-status-response)
 ```typescript
  let details = {
         txHash: status?.transactionHash || undefined,
