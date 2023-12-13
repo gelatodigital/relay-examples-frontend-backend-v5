@@ -1340,13 +1340,15 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.43.0.tgz#559ca3d9ddbd6bf907ad524320a0d14b85586af0"
   integrity sha512-s2UHCoiXfxMvmfzqoN+vrQ84ahUSYde9qNO1MdxmoEhyHWsfmwOpFlwYV+ePJEVc7gFnATGUi376WowX1N7tFg==
 
-"@gelatonetwork/relay-sdk@5.2.0":
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/@gelatonetwork/relay-sdk/-/relay-sdk-5.2.0.tgz#954f10022aef637b4e4df3288f9e9b73738aff30"
-  integrity sha512-1rQP98LDPJdXVmfWNNNO6+rbdBKjchHx6XQDgdwye2TfRhi/s6PO0qOx2tHKaEYNilpVB5HfYKZ8nY1O22ijhQ==
+"@gelatonetwork/relay-sdk@5.5.5":
+  version "5.5.5"
+  resolved "https://registry.yarnpkg.com/@gelatonetwork/relay-sdk/-/relay-sdk-5.5.5.tgz#be2b8dbc5238c42c323ea0681db57c96b820396d"
+  integrity sha512-aLiN8CmWBTei5JMoSg3LHX3MmB+IoaM+Rw1kkm9x/ECrS6FhWZH1WU76+xvmeIVnbncEUc3xNOQfz7UAwUZI0w==
   dependencies:
     axios "0.27.2"
     ethers "6.7.0"
+    isomorphic-ws "^5.0.0"
+    ws "^8.5.0"
 
 "@humanwhocodes/config-array@^0.11.10":
   version "0.11.10"
@@ -5624,7 +5626,7 @@ isexe@^2.0.0:
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
   integrity sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==
 
-isomorphic-ws@5.0.0:
+isomorphic-ws@5.0.0, isomorphic-ws@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/isomorphic-ws/-/isomorphic-ws-5.0.0.tgz#e5529148912ecb9b451b46ed44d53dae1ce04bbf"
   integrity sha512-muId7Zzn9ywDsyXgTIafTry2sV3nySZeUDe6YedVd1Hvuuep5AsIlqK+XefWpYTyJG5e503F2xIuT2lcU6rCSw==
@@ -9709,6 +9711,11 @@ ws@^8.13.0:
   version "8.13.0"
   resolved "https://registry.yarnpkg.com/ws/-/ws-8.13.0.tgz#9a9fb92f93cf41512a0735c8f4dd09b8a1211cd0"
   integrity sha512-x9vcZYTrFPC7aSIbj7sRCYo7L/Xb8Iy+pW0ng0wt2vCJv7M9HOMy0UoN3rr+IFC7hb7vXoqS+P9ktyLLLhO+LA==
+
+ws@^8.5.0:
+  version "8.15.1"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.15.1.tgz#271ba33a45ca0cc477940f7f200cd7fba7ee1997"
+  integrity sha512-W5OZiCjXEmk0yZ66ZN82beM5Sz7l7coYxpRkzS+p9PP+ToQry8szKh+61eNktr7EA9DOwvFGhfC605jDHbP6QQ==
 
 xml-name-validator@^3.0.0:
   version "3.0.0"
