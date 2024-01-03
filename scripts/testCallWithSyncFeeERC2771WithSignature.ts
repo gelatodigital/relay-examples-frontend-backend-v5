@@ -20,7 +20,7 @@ const signer = new ethers.Wallet(process.env.PRIVATE_KEY as string, provider);
 
 const relay = new GelatoRelay();
 
-const testCallWithSyncFeeERC2771 = async () => {
+const testCallWithSyncFeeERC2771WithSignature = async () => {
   const counter = "0x5dD1100f23278e0e27972eacb4F1B81D97D071B7";
   const abi = ["function increment()"];
   // const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -63,4 +63,4 @@ const testCallWithSyncFeeERC2771 = async () => {
   console.log(`https://relay.gelato.digital/tasks/status/${response.taskId}`);
 };
 
-testCallWithSyncFeeERC2771();
+testCallWithSyncFeeERC2771WithSignature();

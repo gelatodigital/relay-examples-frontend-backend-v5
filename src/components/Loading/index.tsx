@@ -17,7 +17,7 @@ const Loading = ({message}:LoadingProps) => (
     <div>
     { message.body!= undefined  &&  <p style={{fontSize:"14px"}} >{message.body}</p>}
     </div>
-    { message.taskId!= undefined  &&  <p style={{fontSize:"12px"}}>TaskId:  <a style={{fontSize:"12px", color:'blue'}} target="_blank" href={'https://goerli.etherscan.io/tx/' + message.taskId}>{message.taskId?.substring(0, 10)}....</a> </p>}
+    { message.taskId!= undefined  &&  <p style={{fontSize:"12px"}}>TxHash:  <a style={{fontSize:"12px", color:'blue'}} target="_blank" href={'https://goerli.etherscan.io/tx/' + message.taskId}>{message.taskId?.substring(0, 10)}....</a> </p>}
     </div>
   </div>
 

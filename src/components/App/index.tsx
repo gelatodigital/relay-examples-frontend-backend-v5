@@ -15,11 +15,11 @@ import {
   CallWithSyncFeeRequest,
   GelatoRelay,
   SponsoredCallRequest,
+  TransactionStatusResponse,
 } from "@gelatonetwork/relay-sdk";
-import { fetchStatus } from "./task";
+import { fetchStatusPoll, fetchStatusSocket } from "./task";
 
-
-const GELATO_RELAY_API_KEY = ""; // YOUR SPONSOR KEY
+const GELATO_RELAY_API_KEY = "MxmKYCSQy3NdBPZE4b6YQn6r6bvmw5OPB5r3Rx1402k_"; // YOUR SPONSOR KEY
 
 const App = () => {
   // these could potentially be unified into one provider
@@ -75,7 +75,6 @@ const App = () => {
     });
   };
 
-
   const onAction = async (action: number) => {
     setLoading(true);
     switch (action) {
@@ -98,7 +97,6 @@ const App = () => {
   };
 
   const sponsoredCallERC2771 = async () => {
-
     const relay = new GelatoRelay();
     const counter = "0x00172f67db60E5fA346e599cdE675f0ca213b47b";
     const abi = ["function increment()"];
@@ -120,14 +118,17 @@ const App = () => {
       user: user as string,
     };
 
+    relay.onTaskStatusUpdate((taskStatus: TransactionStatusResponse) => {
+      console.log("Task status update", taskStatus);
+      fetchStatusSocket(taskStatus, setMessage, setLoading);
+    });
+
     const response = await relay.sponsoredCallERC2771(
       request,
       provider!,
       GELATO_RELAY_API_KEY as string
     );
     console.log(`https://relay.gelato.digital/tasks/status/${response.taskId}`);
-    fetchStatus(response.taskId,setMessage,setLoading)
-
   };
 
   const sponsoredCall = async () => {
@@ -147,16 +148,35 @@ const App = () => {
       target: counter,
       data: data as string,
     };
+    // relay.onTaskStatusUpdate((taskStatus: TransactionStatusResponse) => {
+    //   console.log("Task status update", taskStatus);
+    //   fetchStatusSocket(taskStatus, setMessage, setLoading);
+    // });
 
-  
     const response = await relay.sponsoredCall(
       request,
       GELATO_RELAY_API_KEY as string
     );
 
- 
+    const relayStatusWs = new WebSocket(
+      "wss://api.gelato.digital/tasks/ws/status"
+    );
+      relayStatusWs.onopen = (event) => {
+        relayStatusWs.send(
+          JSON.stringify({
+            action: "subscribe" as string,
+            taskId: response.taskId,
+          })
+        );
+        relayStatusWs.onmessage = (event) => {
+          fetchStatusSocket(JSON.parse(event.data).payload, setMessage, setLoading);
+        };
+      }
+
     console.log(`https://relay.gelato.digital/tasks/status/${response.taskId}`);
-    fetchStatus(response.taskId,setMessage,setLoading)
+
+  
+      
   };
 
   const callWithSyncFee = async () => {
@@ -183,12 +203,11 @@ const App = () => {
       isRelayContext: true,
     };
 
-
     const response = await relay.callWithSyncFee(request);
-  
-   // alert(`TaskId: https://relay.gelato.digital/tasks/status/${response.taskId}`)
+
+    // alert(`TaskId: https://relay.gelato.digital/tasks/status/${response.taskId}`)
     console.log(`https://relay.gelato.digital/tasks/status/${response.taskId}`);
-    fetchStatus(response.taskId,setMessage,setLoading)
+    fetchStatusPoll(response.taskId, setMessage, setLoading);
   };
 
   const callWithSyncFeeERC2771 = async () => {
@@ -220,7 +239,7 @@ const App = () => {
     const response = await relay.callWithSyncFeeERC2771(request, provider!);
 
     console.log(`https://relay.gelato.digital/tasks/status/${response.taskId}`);
-    fetchStatus(response.taskId,setMessage,setLoading)
+    fetchStatusPoll(response.taskId, setMessage, setLoading);
   };
 
   const refresh = async (provider: ethers.BrowserProvider) => {

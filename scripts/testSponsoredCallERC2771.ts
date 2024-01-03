@@ -15,7 +15,7 @@ const RPC_URL = `https://eth-sepolia.g.alchemy.com/v2/${ALCHEMY_ID}`;
 
 const provider = new ethers.JsonRpcProvider(RPC_URL);
 const signer = new ethers.Wallet(process.env.PRIVATE_KEY as string, provider);
-
+console.log(signer.address)
 const relay = new GelatoRelay();
 
 const testSponsoredCallERC2771 = async () => {

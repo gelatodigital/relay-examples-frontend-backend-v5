@@ -2,7 +2,7 @@
   "name": "frontend-template",
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@gelatonetwork/relay-sdk": "5.2.0",
+    "@gelatonetwork/relay-sdk": "^5.5.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -33,8 +33,9 @@
     "testCallWithSyncFeeERC2771": "ts-node --project ./tsconfig.node.json scripts/testCallWithSyncFeeERC2771.ts",
     "testSponsoredCallERC2771WithSignature": "ts-node --project ./tsconfig.node.json scripts/testSponsoredCallERC2771WithSignature.ts",
     "testCallWithSyncFeeERC2771WithSignature": "ts-node --project ./tsconfig.node.json scripts/testCallWithSyncFeeERC2771WithSignature.ts",
-    "testCallWithSyncFeeGetDataToSignERC2771":"ts-node --project ./tsconfig.node.json scripts/testCallWithSyncFeeGetDataToSignERC2771.ts",
-    "testSponsoredGetDataToSignERC2771": "ts-node --project ./tsconfig.node.json scripts/testSponsoredGetDataToSignERC2771.ts"
+    "testCallWithSyncFeeGetDataToSignERC2771": "ts-node --project ./tsconfig.node.json scripts/testCallWithSyncFeeGetDataToSignERC2771.ts",
+    "testSponsoredGetDataToSignERC2771": "ts-node --project ./tsconfig.node.json scripts/testSponsoredGetDataToSignERC2771.ts",
+    "testConcurrentSponsoredCallERC2771": "ts-node --project ./tsconfig.node.json scripts/testConcurrentSponsoredCallERC2771.ts"
   },
   "eslintConfig": {
     "extends": [
