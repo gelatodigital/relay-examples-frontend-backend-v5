@@ -12,7 +12,7 @@ dotenv.config({ path: ".env" });
 const ALCHEMY_ID = process.env.ALCHEMY_ID;
 const GELATO_RELAY_API_KEY = process.env.GELATO_RELAY_API_KEY;
 
-const RPC_URL = `https://eth-goerli.g.alchemy.com/v2/${ALCHEMY_ID}`;
+const RPC_URL = `https://eth-sepolia.g.alchemy.com/v2/${ALCHEMY_ID}`;
 
 const provider = new ethers.JsonRpcProvider(RPC_URL);
 const signer = new ethers.Wallet(process.env.PRIVATE_KEY as string, provider);

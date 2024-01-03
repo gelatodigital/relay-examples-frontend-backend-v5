@@ -1,18 +1,18 @@
 import {
   CallWithERC2771Request,
   ERC2771Type,
-  GelatoRelay
+  GelatoRelay,
 } from "@gelatonetwork/relay-sdk";
 import { ethers } from "ethers";
 import * as dotenv from "dotenv";
-
 
 dotenv.config({ path: ".env" });
 
 const ALCHEMY_ID = process.env.ALCHEMY_ID;
 const GELATO_RELAY_API_KEY = process.env.GELATO_RELAY_API_KEY;
+console.log("GELATO_RELAY_API_KEY: ", GELATO_RELAY_API_KEY);
 
-const RPC_URL = `https://eth-goerli.g.alchemy.com/v2/${ALCHEMY_ID}`;
+const RPC_URL = `https://eth-sepolia.g.alchemy.com/v2/${ALCHEMY_ID}`;
 
 const provider = new ethers.JsonRpcProvider(RPC_URL);
 const signer = new ethers.Wallet(process.env.PRIVATE_KEY as string, provider);
@@ -39,13 +39,12 @@ const testSponsoredGetDataToSignERC2771 = async () => {
     user: user as string,
   };
 
-  
   const { struct, typedData } = await relay.getDataToSignERC2771(
     request,
     ERC2771Type.SponsoredCall,
     signer
   );
- 
+
   const signature = await signer.signTypedData(
     typedData.domain,
     typedData.types,
