@@ -1,0 +1,15 @@
+.logo {
+  padding-top: 0.3em;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .links a {
+  font-size: 0.88em;
+  font-weight: 500;
+  padding: 0.6em;
+}
