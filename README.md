@@ -9,7 +9,7 @@ The relay sdk implements ethers v6 that introduces some minor breaking changes w
 
 We are using React to showcase the relay-sdk integration  
 
-Please add the Gelat Relay sponsorsKey [here](src/components/App/index.tsx#L22) 
+Please add the Gelato Relay sponsorsKey [here](src/components/App/index.tsx#L22) 
 
 ```
 yarn start
